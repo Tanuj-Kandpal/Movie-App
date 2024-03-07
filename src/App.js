@@ -27,7 +27,7 @@ export default function App() {
           setErrorMsg("");
 
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${key}&s=${query}`,
+            `https://www.omdbapi.com/?apikey=${key}&s=${query}`,
             { signal: controller.signal }
           );
           if (!res.ok) {
@@ -97,7 +97,7 @@ export default function App() {
       async function fetchMovieDetails() {
         setMovieDetailsLoading(true);
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${key}&i=${moiveId}`
+          `https://www.omdbapi.com/?apikey=${key}&i=${moiveId}`
         );
         const data = await res.json();
         setMovieDetails(data);
